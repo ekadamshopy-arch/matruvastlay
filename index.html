@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aarambh Foundation | Empowering Lives & Education</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-emerald-900 text-emerald-100 text-xs sm:text-sm py-2 px-4 text-center font-medium">
+    <span>🌟 All donations are 50% tax exempt under Section 80G / 501(c)(3). Reg. No: NGO/2019/84729</span>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xl">
+          🌱
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-slate-900">Aarambh<span class="text-emerald-600">Foundation</span></span>
+          <p class="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Care • Educate • Empower</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+        <a href="#about" class="hover:text-emerald-600 transition">About Us</a>
+        <a href="#programs" class="hover:text-emerald-600 transition">Our Programs</a>
+        <a href="#impact" class="hover:text-emerald-600 transition">Impact & Transparency</a>
+        <a href="#stories" class="hover:text-emerald-600 transition">Stories</a>
+        <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
+      </nav>
+
+      <!-- Desktop Action CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <button onclick="openDonationModal()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition">
+          Donate Now
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Menu Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3">
+      <a href="#about" class="block text-slate-700 hover:text-emerald-600 font-medium">About Us</a>
+      <a href="#programs" class="block text-slate-700 hover:text-emerald-600 font-medium">Our Programs</a>
+      <a href="#impact" class="block text-slate-700 hover:text-emerald-600 font-medium">Impact & Transparency</a>
+      <a href="#stories" class="block text-slate-700 hover:text-emerald-600 font-medium">Stories</a>
+      <a href="#contact" class="block text-slate-700 hover:text-emerald-600 font-medium">Contact</a>
+      <button onclick="openDonationModal()" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-full mt-2">
+        Donate Now
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-emerald-50 via-white to-slate-50 py-20 lg:py-28 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">
+              Together We Rise
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+              Lighting the path of learning for every child.
+            </h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+              We bridge the educational divide in underserved communities by providing digital smart classrooms, midday nutrition, and STEM training for girls.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <button onclick="openDonationModal()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2">
+                <span>Sponsor a Child Today</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              </button>
+              <a href="#programs" class="bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold px-8 py-3.5 rounded-full shadow-sm hover:shadow transition text-center">
+                Explore Programs
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Happy school children smiling" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white text-sm bg-black/40 backdrop-blur-md p-3 rounded-xl border border-white/20">
+                <p class="font-medium italic">"Education gave me the wings to dream of becoming a computer engineer."</p>
+                <p class="text-xs text-emerald-300 font-semibold mt-1">— Ananya, Grade 8 Beneficiary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Numbers Strip -->
+    <section class="bg-emerald-800 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-emerald-700/60">
+          <div class="pt-4 md:pt-0">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-emerald-200">25,000+</div>
+            <p class="mt-2 text-sm text-emerald-100 font-medium">Children Educated</p>
+          </div>
+          <div class="pt-4 md:pt-0">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-emerald-200">120+</div>
+            <p class="mt-2 text-sm text-emerald-100 font-medium">Schools Upgraded</p>
+          </div>
+          <div class="pt-4 md:pt-0">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-emerald-200">1.2M+</div>
+            <p class="mt-2 text-sm text-emerald-100 font-medium">Nutritious Meals Served</p>
+          </div>
+          <div class="pt-4 md:pt-0">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-emerald-200">89%</div>
+            <p class="mt-2 text-sm text-emerald-100 font-medium">Girls Completed High School</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center space-y-4">
+          <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Who We Are</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Driven by empathy, grounded in grassroots action.</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Founded in 2019, Aarambh Foundation operates on a simple belief: poverty should never steal a child's right to learn and grow. We collaborate directly with village panchayats, parents, and government schools to build lasting educational infrastructure.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-2xl">
+              🎯
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Our Mission</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              To eliminate digital illiteracy in rural schools and reduce the school dropout rate among young girls to zero by 2030.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-2xl">
+              👁️
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Our Vision</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              An inclusive society where geography and financial background never dictate a child’s capacity to achieve their potential.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-2xl">
+              🛡️
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">100% Transparency</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Every single rupee/dollar is accounted for. We publish audited financial balance sheets and project impact assessments bi-annually.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs / Urgent Causes -->
+    <section id="programs" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-12">
+          <div>
+            <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Active Campaigns</span>
+            <h2 class="text-3xl font-bold text-slate-900 mt-1">Our Core Initiatives</h2>
+          </div>
+          <p class="text-slate-600 text-sm max-w-md">Every campaign is monitored with strict milestone tracking and direct community reporting.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Program 1 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Students in computer lab" class="h-48 w-full object-cover">
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-50 text-emerald-700">Digital Education</span>
+                <h3 class="text-lg font-bold text-slate-900 mt-2">Project DigiShiksha: Solar Labs</h3>
+                <p class="text-slate-600 text-sm mt-1">Setting up solar-powered computer labs in 15 power-deficient village schools.</p>
+              </div>
+              <div>
+                <div class="w-full bg-slate-100 rounded-full h-2.5 mb-2">
+                  <div class="bg-emerald-600 h-2.5 rounded-full" style="width: 72%"></div>
+                </div>
+                <div class="flex justify-between text-xs font-semibold text-slate-600">
+                  <span>Raised: ₹7,20,000</span>
+                  <span>Goal: ₹10,00,000</span>
+                </div>
+                <button onclick="openDonationModal('Project DigiShiksha')" class="w-full mt-4 bg-slate-900 hover:bg-emerald-600 text-white font-medium text-sm py-2.5 rounded-xl transition">
+                  Contribute
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Program 2 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col">
+            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Girl studying" class="h-48 w-full object-cover">
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded bg-rose-50 text-rose-700">Girl Child Support</span>
+                <h3 class="text-lg font-bold text-slate-900 mt-2">Pankh: STEM Scholarships</h3>
+                <p class="text-slate-600 text-sm mt-1">Covering tuition, books, and mentor support for 250 teenage girls in engineering prep.</p>
+              </div>
+              <div>
+                <div class="w-full bg-slate-100 rounded-full h-2.5 mb-2">
+                  <div class="bg-emerald-600 h-2.5 rounded-full" style="width: 85%"></div>
+                </div>
+                <div class="flex justify-between text-xs font-semibold text-slate-600">
+                  <span>Raised: ₹12,75,000</span>
+                  <span>Goal: ₹15,00,000</span>
+                </div>
+                <button onclick="openDonationModal('Pankh Scholarships')" class="w-full mt-4 bg-slate-900 hover:bg-emerald-600 text-white font-medium text-sm py-2.5 rounded-xl transition">
+                  Contribute
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Program 3 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col">
+            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=600&q=80" alt="Food distribution" class="h-48 w-full object-cover">
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-50 text-amber-700">Health & Food</span>
+                <h3 class="text-lg font-bold text-slate-900 mt-2">Poshan: Nutrition for Learning</h3>
+                <p class="text-slate-600 text-sm mt-1">Supplying fortified breakfast & micro-nutrients to counter stunting & anemia.</p>
+              </div>
+              <div>
+                <div class="w-full bg-slate-100 rounded-full h-2.5 mb-2">
+                  <div class="bg-emerald-600 h-2.5 rounded-full" style="width: 45%"></div>
+                </div>
+                <div class="flex justify-between text-xs font-semibold text-slate-600">
+                  <span>Raised: ₹4,50,000</span>
+                  <span>Goal: ₹10,00,000</span>
+                </div>
+                <button onclick="openDonationModal('Poshan Nutrition')" class="w-full mt-4 bg-slate-900 hover:bg-emerald-600 text-white font-medium text-sm py-2.5 rounded-xl transition">
+                  Contribute
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact & Transparency Section -->
+    <section id="impact" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Accountability First</span>
+            <h2 class="text-3xl font-bold text-slate-900 tracking-tight">How your donation is utilized.</h2>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              We maximize efficiency to make sure the vast majority of our donations go straight to beneficiaries on the ground.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Direct Program Costs (Books, Meals, Equipment)</span>
+                  <span class="text-emerald-700">84%</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2.5">
+                  <div class="bg-emerald-600 h-2.5 rounded-full" style="width: 84%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Program Monitoring & Teacher Training</span>
+                  <span class="text-emerald-700">9%</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2.5">
+                  <div class="bg-emerald-400 h-2.5 rounded-full" style="width: 9%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Administration, Audits & Fundraising</span>
+                  <span class="text-emerald-700">7%</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2.5">
+                  <div class="bg-slate-400 h-2.5 rounded-full" style="width: 7%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 flex flex-wrap gap-4">
+              <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 bg-emerald-50 px-4 py-2 rounded-lg hover:bg-emerald-100 transition">
+                📄 Download FY 2024-25 Annual Report (PDF)
+              </a>
+              <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 bg-emerald-50 px-4 py-2 rounded-lg hover:bg-emerald-100 transition">
+                🔍 Audited Balance Sheet
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 bg-slate-50 border border-slate-200 rounded-2xl p-8 space-y-6">
+            <h3 class="text-xl font-bold text-slate-900">Legal Certifications & Accreditations</h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                Registered under Section 8 of the Companies Act, 2013 (CIN: U85300DL2019NPL348211)
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                Income Tax 12A & 80G Certified (Tax-deductible contributions)
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                NITI Aayog NGO Darpan Registration: DL/2019/023912
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                FCRA Compliant for receiving eligible international funding
+              </li>
+            </ul>
+
+            <div class="border-t border-slate-200 pt-6">
+              <p class="text-xs text-slate-500">Corporate CSR Inquiries: For CSR funding partnerships & Schedule VII compliance, contact <span class="font-semibold text-slate-700">csr@aarambh.org</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficiary Testimonials -->
+    <section id="stories" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center space-y-3 mb-16">
+          <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Voices From The Field</span>
+          <h2 class="text-3xl font-bold text-slate-900">Stories of Transformation</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative space-y-4">
+            <span class="text-5xl text-emerald-200 font-serif absolute top-4 right-6 select-none">“</span>
+            <p class="text-slate-600 italic text-sm leading-relaxed">
+              "Before the smart classroom arrived, our school only had two broken blackboards. Today, my students explore interactive 3D science models and attend coding classes. The dropout rate among girls has dropped to near zero."
+            </p>
+            <div class="flex items-center gap-4 pt-2">
+              <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center">
+                RK
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 text-sm">Ramesh K.</h4>
+                <p class="text-xs text-slate-500">Headmaster, Govt Upper Primary School</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative space-y-4">
+            <span class="text-5xl text-emerald-200 font-serif absolute top-4 right-6 select-none">“</span>
+            <p class="text-slate-600 italic text-sm leading-relaxed">
+              "My parents were planning to discontinue my studies after 10th grade due to money problems. Aarambh's scholarship funded my junior college and tuition. Last month, I passed my engineering entrance exam."
+            </p>
+            <div class="flex items-center gap-4 pt-2">
+              <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center">
+                PS
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 text-sm">Pooja Sharma</h4>
+                <p class="text-xs text-slate-500">STEM Scholar, 1st Year Engineering</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer & Contact Strip -->
+    <section id="contact" class="py-20 bg-white border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-5 space-y-4">
+            <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Join Hands</span>
+            <h2 class="text-3xl font-bold text-slate-900">Get Involved Today</h2>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Whether you want to volunteer on weekends, conduct a workshop, or visit our learning centers, you are always welcome.
+            </p>
+            <div class="space-y-3 pt-4 text-sm text-slate-600">
+              <p>📍 <strong>Registered Office:</strong> 42, Vasant Kunj Institutional Area, New Delhi - 110070</p>
+              <p>📞 <strong>Phone:</strong> +91 (011) 2612-XXXX / +91 98765 43210</p>
+              <p>✉️ <strong>Email:</strong> help@aarambh.org</p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 bg-slate-50 border border-slate-200 p-8 rounded-2xl">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Full Name *</label>
+                  <input type="text" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email Address *</label>
+                  <input type="email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none text-sm">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">I want to *</label>
+                <select class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none text-sm bg-white">
+                  <option>Volunteer as a Teacher / Mentor</option>
+                  <option>Corporate CSR Partnership</option>
+                  <option>Donate Goods / Hardware (Laptops, Books)</option>
+                  <option>General Inquiry</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Message</label>
+                <textarea rows="3" placeholder="Tell us how you would like to help..." class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none text-sm"></textarea>
+              </div>
+              <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm px-6 py-3 rounded-lg transition shadow">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div class="space-y-3">
+        <span class="text-lg font-bold text-white">Aarambh Foundation</span>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Registered non-profit organization dedicated to equitable child education and rural empowerment.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Quick Links</h5>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#about" class="hover:text-emerald-400">About Our Founders</a></li>
+          <li><a href="#programs" class="hover:text-emerald-400">Our Key Programs</a></li>
+          <li><a href="#impact" class="hover:text-emerald-400">Financial Reports</a></li>
+          <li><a href="#" class="hover:text-emerald-400">Careers & Internships</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Legal & Policies</h5>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#" class="hover:text-emerald-400">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-emerald-400">Terms & Conditions</a></li>
+          <li><a href="#" class="hover:text-emerald-400">Refund Policy</a></li>
+          <li><a href="#" class="hover:text-emerald-400">Whistleblower Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Stay Updated</h5>
+        <p class="text-xs text-slate-400 mb-2">Subscribe to our monthly newsletter of field stories.</p>
+        <div class="flex gap-2">
+          <input type="email" placeholder="Your email" class="px-3 py-1.5 rounded bg-slate-800 border border-slate-700 text-xs text-white outline-none focus:border-emerald-500 flex-1">
+          <button class="bg-emerald-600 text-white text-xs px-3 py-1.5 rounded font-medium hover:bg-emerald-700">Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+      © 2026 Aarambh Foundation. All Rights Reserved. Built for positive social impact.
+    </div>
+  </footer>
+
+  <!-- DONATION MODAL (INTERACTIVE) -->
+  <div id="donationModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-slate-200 overflow-hidden relative animate-in fade-in zoom-in duration-150">
+      
+      <!-- Close Button -->
+      <button onclick="closeDonationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 font-bold text-xl p-1">
+        ✕
+      </button>
+
+      <div class="p-6 sm:p-8 space-y-6">
+        <div>
+          <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Support Our Mission</span>
+          <h3 id="modalCauseTitle" class="text-2xl font-bold text-slate-900 mt-1">Make a Donation</h3>
+          <p class="text-xs text-slate-500">Instant 80G tax receipt will be issued to your email.</p>
+        </div>
+
+        <!-- Frequency Toggle -->
+        <div class="grid grid-cols-2 p-1 bg-slate-100 rounded-xl text-center text-xs font-bold">
+          <button type="button" id="freqOnce" onclick="setFrequency('once')" class="py-2 rounded-lg bg-white shadow-sm text-slate-900 transition">One-Time</button>
+          <button type="button" id="freqMonthly" onclick="setFrequency('monthly')" class="py-2 rounded-lg text-slate-500 hover:text-slate-900 transition">Monthly Support ❤️</button>
+        </div>
+
+        <!-- Amount Presets -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-2">Choose Amount</label>
+          <div class="grid grid-cols-3 gap-3">
+            <button type="button" onclick="selectAmount(1000, this)" class="amt-btn border border-slate-200 py-3 rounded-xl font-bold text-sm hover:border-emerald-600 focus:outline-none transition">₹1,000</button>
+            <button type="button" onclick="selectAmount(2500, this)" class="amt-btn border-2 border-emerald-600 bg-emerald-50 text-emerald-900 py-3 rounded-xl font-bold text-sm focus:outline-none transition">₹2,500</button>
+            <button type="button" onclick="selectAmount(5000, this)" class="amt-btn border border-slate-200 py-3 rounded-xl font-bold text-sm hover:border-emerald-600 focus:outline-none transition">₹5,000</button>
+          </div>
+          <p id="impactNote" class="text-xs text-emerald-700 font-medium mt-2 bg-emerald-50 p-2 rounded-lg text-center">
+            🌱 ₹2,500 sponsors school supplies and uniform for 2 children for a whole year.
+          </p>
+        </div>
+
+        <!-- Donor Information Form -->
+        <form onsubmit="handleDonation(event)" class="space-y-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input type="text" required placeholder="Full Legal Name *" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+            <input type="email" required placeholder="Email Address *" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input type="tel" required placeholder="Phone Number *" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+            <input type="text" placeholder="PAN Card No. (For 80G tax claim)" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 outline-none uppercase">
+          </div>
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition mt-4 flex items-center justify-center gap-2">
+            <span>Proceed to Secure Payment</span>
+            <span>🔒</span>
+          </button>
+        </form>
+
+        <p class="text-[11px] text-center text-slate-400">Secured with 256-bit SSL encryption. We support UPI, Cards & NetBanking.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Modal control
+    function openDonationModal(causeName = 'General Fund') {
+      const modal = document.getElementById('donationModal');
+      const title = document.getElementById('modalCauseTitle');
+      title.innerText = causeName === 'General Fund' ? 'Support Our Cause' : 'Support ' + causeName;
+      modal.classList.remove('hidden');
+      if (!mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+    }
+
+    function closeDonationModal() {
+      document.getElementById('donationModal').classList.add('hidden');
+    }
+
+    // Modal amount switcher
+    let currentAmount = 2500;
+    function selectAmount(amount, buttonElement) {
+      currentAmount = amount;
+      document.querySelectorAll('.amt-btn').forEach(btn => {
+        btn.classList.remove('border-2', 'border-emerald-600', 'bg-emerald-50', 'text-emerald-900');
+        btn.classList.add('border-slate-200');
+      });
+
+      buttonElement.classList.remove('border-slate-200');
+      buttonElement.classList.add('border-2', 'border-emerald-600', 'bg-emerald-50', 'text-emerald-900');
+
+      const impactNote = document.getElementById('impactNote');
+      if (amount === 1000) {
+        impactNote.innerText = "🌱 ₹1,000 provides one month of nutritious midday meals for 5 kids.";
+      } else if (amount === 2500) {
+        impactNote.innerText = "🌱 ₹2,500 sponsors school supplies and uniform for 2 children for a whole year.";
+      } else {
+        impactNote.innerText = "🌱 ₹5,000 provides digital tablet access and mentorship to a village classroom.";
+      }
+    }
+
+    // Frequency switcher
+    function setFrequency(freq) {
+      const onceBtn = document.getElementById('freqOnce');
+      const monthlyBtn = document.getElementById('freqMonthly');
+
+      if (freq === 'once') {
+        onceBtn.className = "py-2 rounded-lg bg-white shadow-sm text-slate-900 transition";
+        monthlyBtn.className = "py-2 rounded-lg text-slate-500 hover:text-slate-900 transition";
+      } else {
+        monthlyBtn.className = "py-2 rounded-lg bg-white shadow-sm text-slate-900 transition";
+        onceBtn.className = "py-2 rounded-lg text-slate-500 hover:text-slate-900 transition";
+      }
+    }
+
+    // Form handlers
+    function handleDonation(e) {
+      e.preventDefault();
+      alert(`Thank you for your generous pledge of ₹${currentAmount}! In production, this button connects directly to Razorpay, Stripe, or PayU.`);
+      closeDonationModal();
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent to our volunteer coordination team.");
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
